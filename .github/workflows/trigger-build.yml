@@ -1,0 +1,22 @@
+name: Trigger Build
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * *" # 2h sáng mỗi ngày
+
+jobs:
+  empty-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Create Empty Commit
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git commit --allow-empty -m "Trigger build: $(date)"
+          git push origin main

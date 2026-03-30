@@ -1,4 +1,4 @@
-name: Build & Deploy Vite to Hostinger (FTP)
+name: Build & Deploy to Hostinger (FTP)
 
 on:
   workflow_dispatch:
@@ -26,7 +26,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: ${{ secrets.FTP_PORT || 21 }}
           server-dir: ./ # đổi đúng thư mục đích
-          local-dir: out/ # Vite build output
+          local-dir: out/
           exclude: |
             cms/**
             **/.git*
