@@ -12,11 +12,22 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
+          cache: "yarn"
 
       - run: npm install --global yarn
-      - run: yarn install
+      - run: yarn install --frozen-lockfile
       - run: yarn build
+        env:
+          NEXT_PUBLIC_SERVER_URL: ${{ secrets.NEXT_PUBLIC_SERVER_URL }}
+          NEXT_PUBLIC_WOO_KEY: ${{ secrets.NEXT_PUBLIC_WOO_KEY }}
+          NEXT_PUBLIC_WOO_SECRET: ${{ secrets.NEXT_PUBLIC_WOO_SECRET }}
+
+      - name: Zip build output
+        run: |
+          cd out && zip -r ../deploy.zip . && cd ..
+          mkdir -p deploy_folder
+          mv deploy.zip deploy_folder/
+          cp out/deploy.php deploy_folder/
 
       - name: Deploy via FTP (clean & upload)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
@@ -24,11 +35,14 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          port: ${{ secrets.FTP_PORT || 21 }}
-          server-dir: ./ # đổi đúng thư mục đích
-          local-dir: out/
+          port: 21
+          local-dir: deploy_folder/
+          server-dir: ./
           exclude: |
             cms/**
             **/.git*
             **/.git*/**
             **/node_modules/**
+
+      - name: Trigger Unzip via URL
+        run: curl -s https://dienmaytanphat.com/deploy.php
