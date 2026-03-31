@@ -2,8 +2,8 @@ name: Trigger Build
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 2 * * *" # 2h sáng mỗi ngày
+  # schedule:
+  #   - cron: "0 2 * * *" # 2h sáng mỗi ngày
 
 jobs:
   empty-commit:
