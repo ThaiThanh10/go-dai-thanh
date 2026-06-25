@@ -1,5 +1,20 @@
-const baseUrl = process.env.NEXT_PUBLIC_URL;
+import Catalogue from "./_components/Catalogue";
+import Collections from "./_components/Collections";
+import CoreValues from "./_components/CoreValues";
+import Projects from "./_components/Projects";
+import Quote from "./_components/Quote";
+import Story from "./_components/Story";
+import Videos from "./_components/Videos";
+
 
 export default function Home() {
-  return <div>Hello word: {baseUrl || ""}</div>;
+  return <div >
+    <Quote />
+    <Story />
+    <Videos />
+    <Collections />
+    <Projects />
+    <Catalogue />
+    <CoreValues />
+  </div>;
 }
