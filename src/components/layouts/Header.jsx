@@ -1,5 +1,5 @@
 const Header = () => {
-  return <header className="relative h-screen min-h-[600px] overflow-hidden reveal">
+  return <header className="relative bg-black h-screen min-h-[600px] overflow-hidden reveal">
     <div className="absolute inset-0 z-0">
       {/* <img alt="ATC Furniture Hero" class="w-full h-full object-cover" */}
       {/* src="https://daithanhfurniture.com/wp-content/uploads/2025/04/daithanh-yellow.svg" /> */}
@@ -11,6 +11,7 @@ const Header = () => {
         frameBorder={0}
         allow="autoplay; encrypted-media"
         allowFullScreen=""
+        className="mt-22"
       />
     </div>
     <nav className="relative z-10 flex items-center justify-between px-12 py-8 text-white uppercase text-xs tracking-widest font-medium">

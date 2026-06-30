@@ -158,3 +158,78 @@ html {
     transform: none !important;
   }
 }
+/* Khung chứa chính: Ẩn phần tràn ra ngoài màn hình */
+.brand-slider-custom {
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+  position: relative;
+}
+
+/* Thêm hiệu ứng làm mờ (fade) ở 2 đầu dải logo cho đẹp mắt (Tùy chọn) */
+.brand-slider-custom::before,
+.brand-slider-custom::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+.brand-slider-custom::before {
+  left: 0;
+  top: 0;
+  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.brand-slider-custom::after {
+  right: 0;
+  top: 0;
+  background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Thanh chạy: Chứa toàn bộ logo nằm trên một hàng ngang */
+.brand-track {
+  display: flex;
+  width: max-content; /* Tự động phình to theo số lượng logo */
+  gap: 40px; /* Khoảng cách giữa các logo (margin-right cũ) */
+  animation: scrollLogos 25s linear infinite; /* Chạy liên tục vô tận */
+}
+
+/* Khi di chuột vào dải logo, thanh trượt sẽ tạm dừng */
+.brand-track:hover {
+  animation-play-state: paused;
+}
+
+/* Định dạng từng item logo */
+.brand-item {
+  width: 152.667px; /* Giữ nguyên kích thước cũ của bạn */
+  flex-shrink: 0; /* Không cho logo bị bóp méo width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%); /* (Tùy chọn) Biến logo thành màu xám */
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+/* Khi hover vào từng logo đơn lẻ sẽ sáng lên */
+.brand-item img:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Keyframes: Di chuyển thanh logo sang trái đúng 50% chiều dài (hết dải đầu tiên) */
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Dịch chuyển chính xác một nửa dải */
+  }
+}

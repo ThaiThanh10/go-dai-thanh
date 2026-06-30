@@ -3,7 +3,7 @@ import React from 'react'
 const CoreValues = () => {
   return (
     <section className="py-24 bg-white border-t border-gray-100">
-      <h2 className="section-title text-center mb-16 text-2xl reveal">
+      <h2 className="section-title text-center mb-16 text-4xl reveal">
         Core Values
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-4 max-w-full reveal-stagger">
@@ -22,7 +22,7 @@ const CoreValues = () => {
           <h4 className="uppercase tracking-widest font-semibold mb-6 text-lg">
             Integrity
           </h4>
-          <p className="text-[10px] text-atcMuted leading-loose uppercase">
+          <p className="text-xs text-atcMuted leading-loose uppercase">
             Integrity shapes everything we do. We're a trusted Vietnam furniture
             supplier and outdoor furniture manufacturer specializing in resort
             furniture and hotel furniture, known for honest, transparent dealings
@@ -44,7 +44,7 @@ const CoreValues = () => {
           <h4 className="uppercase tracking-widest font-semibold mb-6 text-lg">
             Ace
           </h4>
-          <p className="text-[10px] text-atcMuted leading-loose uppercase">
+          <p className="text-xs text-atcMuted leading-loose uppercase">
             We deliver excellence in both product and service. Our reputation as a
             premium garden furniture manufacturer and hotel furniture supplier
             ensures our outdoor patio collections provide lasting solutions for
@@ -66,7 +66,7 @@ const CoreValues = () => {
           <h4 className="uppercase tracking-widest font-semibold mb-6 text-lg">
             Trust
           </h4>
-          <p className="text-[10px] text-atcMuted leading-loose uppercase">
+          <p className="text-xs text-atcMuted leading-loose uppercase">
             Trust is built through reliability and open communication. As a patio
             furniture wholesaler, resort furniture provider, and hotel furniture
             exporter, we ensure our clients receive top-quality products and
@@ -88,7 +88,7 @@ const CoreValues = () => {
           <h4 className="uppercase tracking-widest font-semibold mb-6 text-lg">
             Care
           </h4>
-          <p className="text-[10px] text-atcMuted leading-loose uppercase">
+          <p className="text-xs text-atcMuted leading-loose uppercase">
             Care reflects our commitment to sustainability, customer satisfaction,
             and ethical practices. We are proud to be an outdoor furniture company
             that offers customizable, eco-friendly designs ideal for hotel furniture

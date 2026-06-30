@@ -2,13 +2,13 @@ import React from 'react'
 
 const Story = () => {
   return (
-    <section className="pb-24 px-6 md:px-24 reveal">
-      <div className="bg-atcGray rounded-tr-[100px] p-12 md:p-24 flex flex-col md:flex-row gap-12 items-center">
+    <section className="pb-24 px-6 md:px-24 reveal grid place-items-center ">
+      <div className="bg-atcGray rounded-tr-[100px] rounded-bl-[100px] p-12 md:p-24 flex flex-col w-max gap-12 items-center">
         <div className="flex-1 space-y-6">
           <h2 className="text-3xl font-light tracking-widest uppercase">
             Đại Thành Furniture Story
           </h2>
-          <p className="text-atcMuted leading-loose text-sm max-w-2xl">
+          <p className="text-atcMuted leading-loose text-sm max-w-3xl">
             Founded in 2006 as a humble workshop, we have grown into one of
             Vietnam's foremost manufacturers and wholesalers of patio furniture and
             hospitality furniture. Operating from our 30,000-square-meter facility,
